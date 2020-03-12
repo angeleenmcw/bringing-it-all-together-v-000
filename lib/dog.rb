@@ -61,7 +61,7 @@ class Dog
       SELECT * FROM dogs
       WHERE name = ?, breed = ?
       SQL
-      row = DB[:conn].execute(sql, name, breed)[0]
+      row = DB[:conn].execute(sql, self.name, self.breed)[0]
     if row == nil
       self.create(name: name, breed: breed)
     else
